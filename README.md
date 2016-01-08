@@ -48,8 +48,12 @@ Vagrant.configure("2") do |config|
 ## FAQ
 
 * Why this plugin is not named `vagrant-aws-route53` ?
+
 > Unfortunately, that name was already taken by another plugin of the same kind.
+
+
 * So why develop a new one?
+ 
 > There are several reasons for this: use of new AWS SDK, support of multiple records, support of deleting records on machine halt
   or destory.
 
