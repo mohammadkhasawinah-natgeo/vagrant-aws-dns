@@ -1,5 +1,7 @@
 # vagrant-aws-dns
 
+[![Gem Version](https://badge.fury.io/rb/vagrant-aws-dns.svg)](https://badge.fury.io/rb/vagrant-aws-dns) [![Dependency Status](https://gemnasium.com/nasskach/vagrant-aws-dns.svg)](https://gemnasium.com/nasskach/vagrant-aws-dns)
+
 `vagrant-aws-dns` is a Vagrant plugin that allows you to set up route53 records.
 
 ## Behaviors
