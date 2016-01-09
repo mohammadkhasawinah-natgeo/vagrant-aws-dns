@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
     override.ssh.private_key_path = "PATH TO YOUR PRIVATE KEY"
     
     override.dns.hosted_zone_id = 'HOSTED ZONE ID'
-    override.dns.record_sets = [['subdomain1.domain.com', 'A', '4.3.2.1'], ['subdomain1.domain.com', 'A']]
+    override.dns.record_sets = [['subdomain1.domain.com', 'A', '4.3.2.1'], ['subdomain2.domain.com', 'A']]
   end
 ```
 
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
 
 * `['subdomain.domain.com', 'A']` - This will set a record of type `subdomain.domain.com. A <public_ip>`, the <public_ip> is auto detected.
 * `['subdomain.domain.com', 'A', '4.3.2.1']` - This will set a record of type `subdomain.domain.com. A 4.3.2.1`.
-* `['subdomain1.domain.com', 'CNAME', 'domain2.com']` - This will set a record of type `subdomain1.domain.com. CNAME domain2.com.`.
+* `['subdomain.domain1.com', 'CNAME', 'domain2.com']` - This will set a record of type `subdomain.domain1.com. CNAME domain2.com.`.
 
 ## FAQ
 
