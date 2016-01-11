@@ -7,8 +7,8 @@ module VagrantPlugins
       class RemoveRecord < Base
 
         def call(env)
-          super env do |record, type, value|
-            @aws.remove_record(@machine.config.dns.hosted_zone_id, record, type, value)
+          super env do |hosted_zone_id, record, type, value|
+            @aws.remove_record(hosted_zone_id, record, type, value)
             @machine.ui.info("Removing dns record #{record}.")
           end
         end

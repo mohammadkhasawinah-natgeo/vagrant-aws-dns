@@ -21,8 +21,6 @@ module VagrantPlugins
         finalize!
 
         errors = _detected_errors
-        errors << 'hosted_zone_id is required' if @hosted_zone_id.nil? && !@record_sets.nil?
-        errors << 'record_sets is required' if @record_sets.nil? && !hosted_zone_id.nil?
 
         { 'AwsDns' => errors }
       end

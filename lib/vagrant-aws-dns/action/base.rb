@@ -13,15 +13,15 @@ module VagrantPlugins
         end
 
         def call(env)
-          return @app.call(env) if @machine.config.dns.hosted_zone_id.nil? && @machine.config.dns.record_sets.nil?
+          return @app.call(env) if @machine.config.dns.record_sets.nil?
 
           @aws = AwsDns::Util::AwsUtil.new(@machine.provider_config.access_key_id,
                                           @machine.provider_config.secret_access_key)
           public_ip = @aws.get_public_ip(@machine.id)
 
           @machine.config.dns.record_sets.each do |record_set|
-            record, type, value = record_set
-            yield record, type, value || public_ip  if block_given?
+            hosted_zone_id, record, type, value = record_set
+            yield hosted_zone_id, record, type, value || public_ip  if block_given?
           end
 
           @app.call(env)
