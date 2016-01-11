@@ -6,8 +6,14 @@
 
 ## Behaviors
 
-* Set route53 records on machine up.
+* Add/update route53 records on machine up.
 * Remove associated route53 records on machine halt/destroy.
+
+## Release notes
+#### 0.2.0 
+
+- Adding multiple HOSTED_ZONE_ID support.
+- Upgrade aws-sdk to 2.2.9.
  
 ## Installation
 
@@ -32,8 +38,7 @@ Vagrant.configure("2") do |config|
     override.ssh.username = "ubuntu"
     override.ssh.private_key_path = "PATH TO YOUR PRIVATE KEY"
     
-    override.dns.hosted_zone_id = 'HOSTED ZONE ID'
-    override.dns.record_sets = [['subdomain1.domain.com', 'A', '4.3.2.1'], ['subdomain2.domain.com', 'A']]
+    override.dns.record_sets = [%w(HOSTED_ZONE_ID_1 subdomain.domain1.com A 4.3.2.1), %w(HOSTED_ZONE_ID_2 subdomain.domain2.com A)]
   end
 ```
 
@@ -41,9 +46,9 @@ Vagrant.configure("2") do |config|
 
 `record_sets` is an array of record set that are also represented as arrays. Below are some examples:
 
-* `['subdomain.domain.com', 'A']` - This will set a record of type `subdomain.domain.com. A <public_ip>`, the <public_ip> is auto detected.
-* `['subdomain.domain.com', 'A', '4.3.2.1']` - This will set a record of type `subdomain.domain.com. A 4.3.2.1`.
-* `['subdomain.domain1.com', 'CNAME', 'domain2.com']` - This will set a record of type `subdomain.domain1.com. CNAME domain2.com.`.
+* `%w(HOSTED_ZONE_ID subdomain.domain.com A)` - This will set a record of type `subdomain.domain.com. A <public_ip>`, the <public_ip> is auto detected.
+* `%w(HOSTED_ZONE_ID subdomain.domain.com A 4.3.2.1)` - This will set a record of type `subdomain.domain.com. A 4.3.2.1`.
+* `%w(HOSTED_ZONE_ID subdomain.domain.com CNAME domain2.com)` - This will set a record of type `subdomain.domain1.com. CNAME domain2.com.`.
 
 ## FAQ
 
