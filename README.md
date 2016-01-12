@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
 
 `record_sets` is an array of record set that are also represented as arrays. Below are some examples:
 
-* `%w(HOSTED_ZONE_ID subdomain.domain.com A)` - This will set a record of type `subdomain.domain.com. A <public_ip>`, the <public_ip> is auto detected.
+* `%w(HOSTED_ZONE_ID subdomain.domain.com A)` - This will set a record of type `subdomain.domain.com. A <public_ip>`, the `<public_ip>` is auto detected.
 * `%w(HOSTED_ZONE_ID subdomain.domain.com A 4.3.2.1)` - This will set a record of type `subdomain.domain.com. A 4.3.2.1`.
 * `%w(HOSTED_ZONE_ID subdomain.domain.com CNAME domain2.com)` - This will set a record of type `subdomain.domain1.com. CNAME domain2.com.`.
 
