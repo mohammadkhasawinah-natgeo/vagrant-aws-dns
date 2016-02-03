@@ -12,7 +12,7 @@
 ## Release notes
 #### 0.2.1
 
-- [BUGFIX] hard-coded AWS region ([#1](/nasskach/vagrant-aws-dns/issues/1)) - Thanks [hoopesj](https://github.com/hoopesj) for the reporting.
+- [BUGFIX] hard-coded AWS region (#1) - Thanks [hoopesj](https://github.com/hoopesj) for the reporting.
 - Upgrade aws-sdk to 2.2.14.
 
 #### 0.2.0 
