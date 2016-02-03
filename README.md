@@ -10,6 +10,11 @@
 * Remove associated route53 records on machine halt/destroy.
 
 ## Release notes
+#### 0.2.1
+
+- [BUGFIX] hard-coded AWS region ([#1](/nasskach/vagrant-aws-dns/issues/1)) - Thanks [hoopesj](https://github.com/hoopesj) for the reporting.
+- Upgrade aws-sdk to 2.2.14.
+
 #### 0.2.0 
 
 - Adding multiple HOSTED_ZONE_ID support.
