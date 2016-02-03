@@ -16,7 +16,8 @@ module VagrantPlugins
           return @app.call(env) if @machine.config.dns.record_sets.nil?
 
           @aws = AwsDns::Util::AwsUtil.new(@machine.provider_config.access_key_id,
-                                          @machine.provider_config.secret_access_key)
+                                           @machine.provider_config.secret_access_key,
+                                           @machine.provider_config.region)
           public_ip = @aws.get_public_ip(@machine.id)
 
           @machine.config.dns.record_sets.each do |record_set|

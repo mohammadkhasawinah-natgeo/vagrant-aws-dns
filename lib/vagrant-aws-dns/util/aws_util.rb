@@ -8,14 +8,14 @@ module VagrantPlugins
 
         attr_reader :ec2, :route53
 
-        def initialize(accesskey, secretkey)
+        def initialize(accesskey, secretkey, region)
           credentials = Aws::Credentials.new(accesskey, secretkey)
           @ec2 = Aws::EC2::Client.new(
-              region: 'eu-west-1',
+              region: region,
               credentials: credentials
           )
           @route53 = Aws::Route53::Client.new(
-              region: 'eu-west-1',
+              region: region,
               credentials: credentials
           )
         end
