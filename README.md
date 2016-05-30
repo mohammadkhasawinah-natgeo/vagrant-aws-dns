@@ -10,6 +10,12 @@
 * Remove associated route53 records on machine halt/destroy.
 
 ## Release notes
+#### 0.2.2
+
+- Upgrade aws-sdk to 2.3.9.
+- Upgrade bundler to 1.12.
+- Upgrade rake to 11.1.
+
 #### 0.2.1
 
 - [BUGFIX] hard-coded AWS region ([#1](https://github.com/nasskach/vagrant-aws-dns/issues/1)) - Thanks [hoopesj](https://github.com/hoopesj) for the reporting.
