@@ -10,6 +10,10 @@
 * Remove associated route53 records on machine halt/destroy.
 
 ## Release notes
+#### 0.2.3
+
+- Downgrade bundler version due to some dependencies problems.
+
 #### 0.2.2
 
 - Upgrade aws-sdk to 2.3.9.
