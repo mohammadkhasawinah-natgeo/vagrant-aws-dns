@@ -24,13 +24,13 @@ module VagrantPlugins
           @ec2.describe_instances({instance_ids: [instance_id]}).reservations[0].instances[0].public_ip_address
         end
 
-	def get_private_ip(instance_id)
+        def get_private_ip(instance_id)
           @ec2.describe_instances({instance_ids: [instance_id]}).reservations[0].instances[0].private_ip_address
         end
 
-	def is_private_zone(hosted_zone_id)
+        def is_private_zone(hosted_zone_id)
 	  @route53.get_hosted_zone({id: '/hostedzone/' + hosted_zone_id}).hosted_zone.config.private_zone
-	end
+        end
 
         def add_record(hosted_zone_id, record, type, value)
           change_record(hosted_zone_id, record, type, value, 'UPSERT')
@@ -64,7 +64,6 @@ module VagrantPlugins
               }
           })
         end
-
       end
     end
   end
