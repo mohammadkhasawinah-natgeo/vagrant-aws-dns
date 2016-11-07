@@ -24,12 +24,11 @@ module VagrantPlugins
           @machine.config.dns.record_sets.each do |record_set|
             hosted_zone_id, record, type, value = record_set
 
-           if @aws.is_private_zone(hosted_zone_id)
+            if @aws.is_private_zone(hosted_zone_id)
                yield hosted_zone_id, record, type, value || private_ip  if block_given?
-           else
+            else
                yield hosted_zone_id, record, type, value || public_ip  if block_given?
-           end
-
+            end
           end
 
           @app.call(env)
