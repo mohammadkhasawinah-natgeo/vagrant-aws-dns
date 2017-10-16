@@ -33,6 +33,16 @@ module VagrantPlugins
         hook.before VagrantPlugins::AWS::Action::TerminateInstance, VagrantPlugins::AwsDns::Action::RemoveRecord
       end
 
+      action_hook :add_record, :machine_action_reload do |hook|
+        require_relative 'action/remove_record'
+        hook.after VagrantPlugins::AWS::Action::StopInstance,      VagrantPlugins::AwsDns::Action::RemoveRecord
+        hook.after VagrantPlugins::AWS::Action::TerminateInstance, VagrantPlugins::AwsDns::Action::RemoveRecord
+
+        require_relative 'action/add_record'
+        hook.after VagrantPlugins::AWS::Action::RunInstance,   VagrantPlugins::AwsDns::Action::AddRecord
+        hook.after VagrantPlugins::AWS::Action::StartInstance, VagrantPlugins::AwsDns::Action::AddRecord
+      end
+
     end
   end
 end
