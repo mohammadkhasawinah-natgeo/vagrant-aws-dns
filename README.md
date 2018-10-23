@@ -4,6 +4,10 @@
 
 `vagrant-aws-dns` is a Vagrant plugin that allows you to set up route53 records for instances created using vagrant-aws provider.
 
+## Building
+
+ ```gem build  vagrant-aws-dns.gemspec```
+ 
 ## Behaviors
 
 * Add/update route53 records on machine up.
