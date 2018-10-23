@@ -52,7 +52,7 @@ module VagrantPlugins
                     resource_record_set: {
                       name: record, # required
                       type: type, # required, accepts SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
-                      ttl: 1,
+                      ttl: 900,
                       resource_records: [
                         {
                           value: value # required
